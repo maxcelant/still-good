@@ -9,11 +9,11 @@ export const lightTheme = {
 }
 
 export const darkTheme = {
-    primary: '#596A46',
-    secondary: '#6D8EA0',
-    accent: '#8FA08C',
-    background: '#202020',
-    textPrimary: '#FFFFFF',
-    textSecondary: '#A1B9C8',
-    textHeaders: '#FFFFFF'
+    primary: '#596A46',       // Green
+    secondary: '#1E211B',     // Grey
+    accent: '#8FA08C',        // Blue
+    background: '#202020',    // Black
+    textPrimary: '#FFFFFF',   // White
+    textSecondary: '#A1B9C8', // Grey
+    textHeaders: '#FFFFFF'    // White
 }
