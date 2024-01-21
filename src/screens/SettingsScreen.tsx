@@ -5,16 +5,16 @@ import { View, Text, SafeAreaView, StyleSheet, Switch } from "react-native"
 import { Header } from "../components"
 import { RootState, setTheme } from "../store"
 import { Theme } from "../store/theme"
-import { ThemePicker } from "../components/ThemePicker"
+import { ThemePicker } from "../components"
+import { lightTheme, darkTheme } from "../utils"
 
 export const SettingsScreen = () => {
 
+  const themeCtx = useSelector((state: RootState) => state.theme)
+
   return (
     <Header title='Settings'>
-      <SafeAreaView style={styles.container}>
-        <Text>
-          Stats
-        </Text>
+      <SafeAreaView style={[styles.container, { backgroundColor: themeCtx.theme === Theme.LIGHT ? lightTheme.background : darkTheme.background }]}>
         <View>
          <ThemePicker />
         </View>

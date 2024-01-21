@@ -8,21 +8,25 @@ import { Provider, useSelector } from 'react-redux';
 import { store, RootState } from './src/store';
 import { Theme } from './src/store/theme';
 import { lightTheme, darkTheme } from './src/utils';
+import { View } from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
 
-  const theme = useSelector((state: RootState) => state.theme)
+  const themeCtx = useSelector((state: RootState) => state.theme)
 
   return (
-    <>
-      <StatusBar style={theme.theme === Theme.LIGHT ? 'dark' : 'light'} />
+    <View style={{ flex: 1, backgroundColor: themeCtx.theme === Theme.LIGHT ? lightTheme.background : darkTheme.background}}>
+      <StatusBar 
+        style={themeCtx.theme === Theme.LIGHT ? 'dark' : 'light'}
+        backgroundColor={themeCtx.theme === Theme.LIGHT ? lightTheme.primary : darkTheme.primary}
+      />
       <NavigationContainer>
         <Tab.Navigator screenOptions={{ 
           tabBarStyle: {
             height: 60,
-            backgroundColor: theme.theme === Theme.LIGHT ? lightTheme.background : darkTheme.background,
+            backgroundColor: themeCtx.theme === Theme.LIGHT ? lightTheme.background : darkTheme.background,
           },
           headerShown: false,
         }}>
@@ -31,7 +35,7 @@ const TabNavigator = () => {
           <Tab.Screen name="Settings" component={SettingsScreen}/>
         </Tab.Navigator>
       </NavigationContainer>
-    </>
+    </View>
   )
 }
 

@@ -7,12 +7,12 @@ import { Theme } from "../store/theme"
 
 export const Header = ({ title, children }: { title: string, children: any }) => {
   
-  const theme = useSelector((state: RootState) => state.theme)
+  const themeCtx = useSelector((state: RootState) => state.theme)
 
   return (
     <View style={styles.container}>
-      <View style={[styles.headerContainer, { backgroundColor: theme.theme === Theme.LIGHT ? lightTheme.primary : darkTheme.primary }]}>
-        <Text style={[styles.title, { color: theme.theme === Theme.LIGHT ? lightTheme.textPrimary : darkTheme.textPrimary }]}>{title}</Text>
+      <View style={[styles.headerContainer, { backgroundColor: themeCtx.theme === Theme.LIGHT ? lightTheme.primary : darkTheme.primary }]}>
+        <Text style={styles.title}>{title}</Text>
       </View>
       <View style={styles.contentContainer}>
         {children}
@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
+    color: lightTheme.textHeaders,
   },
   contentContainer: {
     flex: 10,

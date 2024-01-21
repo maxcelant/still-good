@@ -1,3 +1,5 @@
 import { Header } from './Header'
+import { ThemePicker } from './ThemePicker'
+import { Item } from './Item'
 
-export { Header }
+export { Header, ThemePicker, Item }
