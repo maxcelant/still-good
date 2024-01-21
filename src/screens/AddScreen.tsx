@@ -1,12 +1,15 @@
-import { View, Text, SafeAreaView, StyleSheet } from "react-native"
+import { Text, SafeAreaView, StyleSheet } from "react-native"
+import { Header } from "../components"
 
 export const AddScreen = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text>
-        Add
-      </Text>
-    </SafeAreaView>
+    <Header title='Add'>
+      <SafeAreaView style={styles.container}>
+        <Text>
+          Add
+        </Text>
+      </SafeAreaView>
+    </Header>
   )
 }
 

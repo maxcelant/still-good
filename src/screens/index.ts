@@ -1,5 +1,5 @@
 import { HomeScreen } from './HomeScreen'
 import { AddScreen } from './AddScreen'
-import { StatsScreen } from './StatsScreen'
+import { SettingsScreen } from './SettingsScreen'
 
-export { HomeScreen, AddScreen, StatsScreen }
+export { HomeScreen, AddScreen, SettingsScreen }

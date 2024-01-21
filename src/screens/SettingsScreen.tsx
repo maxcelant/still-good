@@ -1,12 +1,12 @@
 import { View, Text, SafeAreaView, StyleSheet } from "react-native"
 import { Header } from "../components"
 
-export const HomeScreen = () => {
+export const SettingsScreen = () => {
   return (
-    <Header title='Home'>
+    <Header title='Settings'>
       <SafeAreaView style={styles.container}>
         <Text>
-          Home
+          Stats
         </Text>
       </SafeAreaView>
     </Header>
@@ -16,6 +16,6 @@ export const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 40,
-  },
+    paddingTop: 40
+  }
 })
