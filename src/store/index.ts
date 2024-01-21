@@ -1,3 +1,4 @@
-import { store } from './store'
+import { store, RootState } from './store'
+import { setTheme, Theme } from './theme'
 
-export { store }
+export { store, RootState, setTheme, Theme }
