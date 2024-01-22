@@ -7,7 +7,6 @@ import { useNavigation } from "@react-navigation/native"
 import { StackNavigationProp } from "@react-navigation/stack"
 
 type AddStackParamList = {
-  Add: undefined;
   'Manual Form': undefined;
 };
 
@@ -20,7 +19,7 @@ export const AddScreen = () => {
   return (
     <Header>
       <SafeAreaView style={[styles.container, { backgroundColor: themeCtx.theme === Theme.LIGHT ? lightTheme.background : darkTheme.background }]}>
-        <View>
+        <View style={styles.buttonContainer}>
           <Button title="Add Manual" onPress={() => navigation.navigate('Manual Form')}/>
           <Button title="Take Photo" />
         </View>

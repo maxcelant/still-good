@@ -17,7 +17,7 @@ const Stack = createStackNavigator();
 const AddStackNavigator = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Add" component={AddScreen} />
+      <Stack.Screen name="AddHome" component={AddScreen} />
       <Stack.Screen name="Manual Form" component={AddFormScreen} />
     </Stack.Navigator>
   )
