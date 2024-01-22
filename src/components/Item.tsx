@@ -2,7 +2,7 @@ import { View, Text, StyleSheet } from "react-native"
 import { useSelector } from "react-redux"
 import { RootState, Theme } from "../store"
 import { lightTheme, darkTheme } from "../utils"
-import { ItemType } from "../data/data"
+import { ItemType } from '../utils'
 import { ItemBadge } from "./ItemBadge";
 
 export const Item = (item: ItemType) => {
@@ -10,7 +10,7 @@ export const Item = (item: ItemType) => {
   const themeCtx = useSelector((state: RootState) => state.theme)
   
   return (
-    <View style={[styles.container, { backgroundColor: themeCtx.theme === Theme.LIGHT ? lightTheme.background : darkTheme.background }]}>
+    <View style={[styles.container, { backgroundColor: themeCtx.theme === Theme.LIGHT ? lightTheme.secondary : darkTheme.secondary }]}>
       <View style={styles.iconContainer}>
         <Text style={styles.icon}>{item.icon}</Text>
       </View>

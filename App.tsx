@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator} from '@react-navigation/stack'
 
-import { HomeScreen, AddScreen, SettingsScreen, AddFormScreen } from './src/screens';
+import { HomeScreen, AddScreen, SettingsScreen, AddFormScreen, AmbientScreen, ChillScreen, FreezeScreen } from './src/screens';
 import { Provider, useSelector } from 'react-redux';
 import { store, RootState } from './src/store';
 import { Theme } from './src/store/theme';
@@ -17,8 +17,19 @@ const Stack = createStackNavigator();
 const AddStackNavigator = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="AddHome" component={AddScreen} />
+      <Stack.Screen name="Add" component={AddScreen} />
       <Stack.Screen name="Manual Form" component={AddFormScreen} />
+    </Stack.Navigator>
+  )
+}
+
+const HomeStackNavigator = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Ambient" component={AmbientScreen} />
+      <Stack.Screen name="Chill" component={ChillScreen} />
+      <Stack.Screen name="Freeze" component={FreezeScreen} />
     </Stack.Navigator>
   )
 }
@@ -41,8 +52,8 @@ const TabNavigator = () => {
           },
           headerShown: false,
         }}>
-          <Tab.Screen name="Home" component={HomeScreen}/>
-          <Tab.Screen name="Add" component={AddStackNavigator}/>
+          <Tab.Screen name="HomeRoot" component={HomeStackNavigator}/>
+          <Tab.Screen name="AddRoot" component={AddStackNavigator}/>
           <Tab.Screen name="Settings" component={SettingsScreen}/>
         </Tab.Navigator>
       </NavigationContainer>

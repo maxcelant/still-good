@@ -1,3 +1,4 @@
 import { lightTheme, darkTheme } from './themes';
+import { ItemType } from './item'
 
-export { lightTheme, darkTheme }
+export { lightTheme, darkTheme, ItemType }
