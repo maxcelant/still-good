@@ -3,6 +3,7 @@ import { useSelector } from "react-redux"
 import { RootState } from "../store"
 import { darkTheme, lightTheme } from "../utils"
 import { Theme } from "../store/theme"
+import { Button } from "@rneui/base"
 
 
 export const HomeHeader = ({ children }: { children: any }) => {
@@ -12,7 +13,12 @@ export const HomeHeader = ({ children }: { children: any }) => {
   return (
     <View style={[styles.container, { backgroundColor: themeCtx.theme === Theme.LIGHT ? lightTheme.background : darkTheme.background }]}>
       <View style={styles.headerContainer}>
-
+        <View>
+          <Button title="Search" />
+        </View>
+        <View>
+          <Button title="Filtering" />
+        </View>
       </View>
       <View style={styles.contentContainer}>
         {children}
@@ -27,8 +33,12 @@ const styles = StyleSheet.create({
     paddingTop: 40,
   },
   headerContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
     flex: 1,
-    minHeight: 40,
+    minHeight: 30,
   },
   contentContainer: {
     flex: 10,
