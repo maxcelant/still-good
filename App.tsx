@@ -20,7 +20,7 @@ const TabNavigator = () => {
     <View style={{ flex: 1, backgroundColor: themeCtx.theme === Theme.LIGHT ? lightTheme.background : darkTheme.background}}>
       <StatusBar 
         style={themeCtx.theme === Theme.LIGHT ? 'dark' : 'light'}
-        backgroundColor={themeCtx.theme === Theme.LIGHT ? lightTheme.primary : darkTheme.primary}
+        backgroundColor={themeCtx.theme === Theme.LIGHT ? lightTheme.background : darkTheme.background}
       />
       <NavigationContainer>
         <Tab.Navigator screenOptions={{ 

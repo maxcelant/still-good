@@ -9,7 +9,7 @@ export const AddScreen = () => {
   const themeCtx = useSelector((state: RootState) => state.theme)
 
   return (
-    <Header title='Add'>
+    <Header>
       <SafeAreaView style={[styles.container, { backgroundColor: themeCtx.theme === Theme.LIGHT ? lightTheme.background : darkTheme.background }]}>
         <Text>
           Add
@@ -22,6 +22,6 @@ export const AddScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 40,
+    paddingTop: 5,
   },
 })

@@ -13,10 +13,10 @@ export const SettingsScreen = () => {
   const themeCtx = useSelector((state: RootState) => state.theme)
 
   return (
-    <Header title='Settings'>
+    <Header>
       <SafeAreaView style={[styles.container, { backgroundColor: themeCtx.theme === Theme.LIGHT ? lightTheme.background : darkTheme.background }]}>
         <View>
-         <ThemePicker />
+          <ThemePicker />
         </View>
       </SafeAreaView>
     </Header>
@@ -26,6 +26,6 @@ export const SettingsScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 40
+    paddingTop: 5
   }
 })

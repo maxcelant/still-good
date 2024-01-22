@@ -1,5 +1,5 @@
-import { View, Text, SafeAreaView, StyleSheet, FlatList } from "react-native"
-import { Header, Item } from "../components"
+import {  SafeAreaView, StyleSheet, FlatList } from "react-native"
+import { HomeHeader, Item } from "../components"
 import { useSelector } from "react-redux"
 import { RootState, Theme } from "../store"
 import { darkTheme, lightTheme } from "../utils"
@@ -10,7 +10,7 @@ export const HomeScreen = () => {
   const themeCtx = useSelector((state: RootState) => state.theme)
 
   return (
-    <Header title='Home'>
+    <HomeHeader>
       <SafeAreaView style={[styles.container, { backgroundColor: themeCtx.theme === Theme.LIGHT ? lightTheme.background : darkTheme.background }]}>
         <FlatList
           data={data}
@@ -18,7 +18,7 @@ export const HomeScreen = () => {
           keyExtractor={item => item.id}
         />
       </SafeAreaView>
-    </Header>
+    </HomeHeader>
   )
 }
 
